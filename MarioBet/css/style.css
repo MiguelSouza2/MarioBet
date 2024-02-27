@@ -18,7 +18,7 @@ body {
   background-image: url("../img/rubiks_cube_15543.png");
   height: 64px;
   width: 64px;
-  position: absolute;
+  position: absolute;  
 
 }
 
@@ -52,10 +52,24 @@ body {
 
 .navbar ul li {
   padding: 2vh;
+  max-height: 4vh;
 }
 
 .navbar ul li:nth-child(2){
-  margin-left: 100px;
+  margin-left: 6vw;
+}
+
+.navbar ul #login_btn{
+  left: 95vw;
+  top: 1.2vw;
+  position: absolute;
+}
+
+#login_btn{
+  background-color: #d8773f;
+  padding: 2vh;
+  margin: 0;
+  cursor: grab;
 }
 
 ul {
@@ -85,6 +99,11 @@ ul {
 }
 
 .biocube{
-  position: relative;
-  float: inline-end;
+  position: absolute;
+  right: 17.5vw;
+  top: 7.2vw;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  background-color: rgba(255, 255, 255, 0.716);
+  max-width: 7vw;
 }
