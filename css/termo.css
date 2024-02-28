@@ -1,0 +1,11 @@
+#main_div{
+    text-align: center;
+}
+
+.termo_input{
+    width: 8vw;
+    height: 8vh;
+    background-color: #6262d8;
+    text-align: center;
+    font-size: xx-large;
+}
