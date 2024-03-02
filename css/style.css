@@ -8,12 +8,6 @@
 }
 
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #24213d;
-}
-
 .test{
   background-image: url("../img/rubiks_cube_15543.png");
   height: 64px;
@@ -44,25 +38,8 @@ body {
   border-bottom: 1px solid #808080;
 }
 
-
-.navbar {
-  border-bottom: 1px solid #808080;
-  width: auto;
-}
-
-
-.navbar ul li {
-  padding: 2vh;
-  display: inline-block;
-}
-
-.navbar ul li:nth-child(1){
+#main_nav ul li:nth-child(1){
   margin-left: 100px;
-}
-
-.navbar ul li:nth-child(2),
-.navbar ul li:nth-child(3){
-  float: right;
 }
 
 ul {
