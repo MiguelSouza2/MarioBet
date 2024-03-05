@@ -2,6 +2,9 @@ const lista_de_palavras = ["p", "r", "i", "m", "o"];
 
 let exibicao_palavra;
 
+let line1 = document.getElementById("line1");
+let line2 = document.getElementById("line2");
+
 let letter_1 = document.getElementById("termo_input_1");
 let letter_2 = document.getElementById("termo_input_2");
 let letter_3 = document.getElementById("termo_input_3");
@@ -60,11 +63,19 @@ function start_game() {
 
   console.log(input_letters);
   console.log(lista_de_palavras);
-  if(input_letters.length === lista_de_palavras.length){
+  if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') === lista_de_palavras.join(''))){
     letter_1.style.backgroundColor = 'green';
     letter_2.style.backgroundColor = 'green';
     letter_3.style.backgroundColor = 'green';
     letter_4.style.backgroundColor = 'green';
     letter_5.style.backgroundColor = 'green';
+  }
+  else if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') !== lista_de_palavras.join(''))){
+    line1.querySelectorAll(".termo_input").forEach(input =>{
+      input.disabled = true;
+    });
+    line2,querySelectorAll(".termo_input").forEach(input =>{
+      input.disabled = false;
+    });
   }
 }
