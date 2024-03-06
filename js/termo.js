@@ -4,6 +4,11 @@ let exibicao_palavra;
 
 let line1 = document.getElementById("line1");
 let line2 = document.getElementById("line2");
+let line3 = document.getElementById("line3");
+let line4 = document.getElementById("line4");
+let line5 = document.getElementById("line5");
+
+lines = [line1, line2, line3, line4, line5];
 
 let letter_1 = document.getElementById("termo_input_1");
 let letter_2 = document.getElementById("termo_input_2");
@@ -13,22 +18,22 @@ let letter_5 = document.getElementById("termo_input_5");
 
 function return_letter() {
 
-  document.getElementById("termo_input_2").addEventListener("keydown", function (event) {
+  letter_2.addEventListener("keydown", function (event) {
     if (event.key === "Backspace") {
       letter_1.focus();
     }
   });
-  document.getElementById("termo_input_3").addEventListener("keydown", function (event) {
+  letter_3.addEventListener("keydown", function (event) {
     if (event.key === "Backspace") {
       letter_2.focus();
     }
   });
-  document.getElementById("termo_input_4").addEventListener("keydown", function (event) {
+  letter_4.addEventListener("keydown", function (event) {
     if (event.key === "Backspace") {
       letter_3.focus();
     }
   });
-  document.getElementById("termo_input_5").addEventListener("keydown", function (event) {
+  letter_5.addEventListener("keydown", function (event) {
     if (event.key === "Backspace") {
       letter_4.focus();
       letter_5.value = '';
@@ -61,8 +66,7 @@ function start_game() {
     input_letters[4] = letter_5.value;
   }
 
-  console.log(input_letters);
-  console.log(lista_de_palavras);
+
   if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') === lista_de_palavras.join(''))){
     letter_1.style.backgroundColor = 'green';
     letter_2.style.backgroundColor = 'green';
@@ -71,11 +75,17 @@ function start_game() {
     letter_5.style.backgroundColor = 'green';
   }
   else if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') !== lista_de_palavras.join(''))){
-    line1.querySelectorAll(".termo_input").forEach(input =>{
-      input.disabled = true;
-    });
-    line2,querySelectorAll(".termo_input").forEach(input =>{
-      input.disabled = false;
-    });
+    
+    input_letters = [];
+    console.log(input_letters);
+
+    for (let i = 0; i < lines.length; i++) {
+      lines[i].querySelectorAll('.termo_input').forEach(input => {
+        input.disabled = true;
+      });
+      lines[i+1].querySelector('.termo_input').forEach(input => {
+        input.disabled = false;
+      });
+    }
   }
 }
