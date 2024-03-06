@@ -67,25 +67,34 @@ function start_game() {
   }
 
 
-  if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') === lista_de_palavras.join(''))){
-    letter_1.style.backgroundColor = 'green';
-    letter_2.style.backgroundColor = 'green';
-    letter_3.style.backgroundColor = 'green';
-    letter_4.style.backgroundColor = 'green';
-    letter_5.style.backgroundColor = 'green';
-  }
-  else if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') !== lista_de_palavras.join(''))){
-    
-    input_letters = [];
-    console.log(input_letters);
+  
 
     for (let i = 0; i < lines.length; i++) {
+
+      if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') === lista_de_palavras.join(''))){
+        letter_1.style.backgroundColor = 'green';
+        letter_2.style.backgroundColor = 'green';
+        letter_3.style.backgroundColor = 'green';
+        letter_4.style.backgroundColor = 'green';
+        letter_5.style.backgroundColor = 'green';
+      }
+      else if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') !== lista_de_palavras.join(''))){
+        
+        input_letters = [];
+        console.log(input_letters);
+
+      let g = i + 1;
       lines[i].querySelectorAll('.termo_input').forEach(input => {
         input.disabled = true;
       });
-      lines[i+1].querySelector('.termo_input').forEach(input => {
+      lines[g].querySelectorAll('.termo_input').forEach(input => {
         input.disabled = false;
-      });
+        console.log(lines[g]); 
+        
+      },
+      console.log("pineto")
+      );
+      
     }
   }
 }
