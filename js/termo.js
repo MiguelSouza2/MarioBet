@@ -8,7 +8,7 @@ let line3 = document.getElementById("line3");
 let line4 = document.getElementById("line4");
 let line5 = document.getElementById("line5");
 
-lines = [line1, line2, line3, line4, line5];
+let lines = [line1, line2, line3, line4, line5];
 
 let letter_1 = document.getElementById("termo_input_1");
 let letter_2 = document.getElementById("termo_input_2");
@@ -71,7 +71,7 @@ function start_game() {
 
     for (let i = 0; i < lines.length; i++) {
 
-      if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') === lista_de_palavras.join(''))){
+      if((input_letters.length === lista_de_palavras.length) && (input_letters.join('') === lista_de_palavras.join('')) && (input_letters === lista_de_palavras)){
         letter_1.style.backgroundColor = 'green';
         letter_2.style.backgroundColor = 'green';
         letter_3.style.backgroundColor = 'green';
@@ -88,8 +88,7 @@ function start_game() {
         input.disabled = true;
       });
       lines[g].querySelectorAll('.termo_input').forEach(input => {
-        input.disabled = false;
-        console.log(lines[g]); 
+        input.disabled = false; 
         
       },
       console.log("pineto")
