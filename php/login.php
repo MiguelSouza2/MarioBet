@@ -30,7 +30,7 @@
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $password = trim($_POST['password']);
         $username = trim($_POST['username']);
-
+        
         // check if user exists
         $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($link, $sql);
@@ -38,7 +38,7 @@
         if (mysqli_num_rows($result) > 0) {
             header("Location: main_page.php");
         } else{
-            echo "invalid user or password!";
+            echo "Invalid username or password!";
         }
     }
     ?>

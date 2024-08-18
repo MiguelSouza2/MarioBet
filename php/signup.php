@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container border border-info p-5 rounded" style="margin-top:width: 30vw">
+    <div class="container border border-info p-3 rounded" style="margin-top:width: 30vw">
         <div class="border border-warning container">
             <form method="POST" action="signup.php">
                 <label for="username" class="form-label">Username:</label>
@@ -48,19 +48,14 @@
                 echo 'Message: ' . $e->getMessage() . $link->error;
             }
         }
-
-
-
     }
 
-
-
-    ?>
-
+?>
 
 
 
 
+    <script src="../js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
