@@ -28,8 +28,8 @@
     include "config/config.php";
 
     if (isset($_POST['username']) && isset($_POST['password'])) {
-        $password = trim($_POST['password']);
-        $username = trim($_POST['username']);
+        $password = md5($_POST['password']);
+        $username = md5($_POST['username']);
         
         // check if user exists
         $sql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
