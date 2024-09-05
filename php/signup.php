@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container border border-info p-5 rounded" style="margin-top:width: 30vw">
+    <div class="container border border-info p-5 rounded" style="width: 30vw">
         <div class="border border-warning container">
             <form method="POST" action="signup.php">
                 <label for="username" class="form-label">Username:</label>
@@ -30,13 +30,13 @@
     <?php
     include 'config/config.php';
     if (isset($_POST['username']) && isset($_POST['password']) && isset($_POST['email'])) {
-        $user_name = $_POST['username'];
-        $pass_word = $_POST['password'];
+        $user_name = md5($_POST['username']);
+        $pass_word = md5($_POST['password']);
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             echo "Invalid email format";
             die();
         } else {
-            $email = $_POST['email'];
+            $email = md5($_POST['email']);
 
             try {
 
@@ -48,12 +48,9 @@
                 echo 'Message: ' . $e->getMessage() . $link->error;
             }
         }
-
-
-
     }
 
-
+    
 
     ?>
 
